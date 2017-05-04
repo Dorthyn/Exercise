@@ -19,7 +19,7 @@ Time:10:25
 #define MBILL 2
 #define TENTHOUSAND 1
 #define YUAN 0
-#define MAX_PARA 5
+#define MAX_PARA 20
 
 
 // 函数声明
@@ -27,8 +27,13 @@ void partition(char *Lower_case, char *Upper_case);//将数字分成三小段；
 void read(char *temp, char *result);//将段内千位以内数字大写读出来；
 void reverse(char s[]);//转置函数；
 int ISdecimals(char *temp); //判断是否为小数，是则返回小数点所在位置，不是则返回0；
+int ISLegal(char *input);//判断输入合法性
+void round(char *source, int dig);//四舍五入函数，参数1为需要四舍五入的数，参数2为结果，参数3为保留位数；
+                                            //当要保留的位数大于实际小数位数时，返回原值；
+int search(char* obj);//计算字符'.'在字符串string中的位置
 
-// 代码实现
+                     // 代码实现
+
 int main() {
     //整数金额
     char Lower_amount[MAX_CAPACITY] = { 0 };
@@ -47,28 +52,63 @@ int main() {
     memset(Upper_amount, 0, MAX_CAPACITY);
 
     printf_s("输入要转换的小写金额：\n");
-    scanf_s("%s", Lower_amount,15);
+    scanf_s("%s", Lower_amount, MAX_CAPACITY);
     //
+
+    if ((-1) == ISLegal(Lower_amount))
+    {
+        printf("输入不合法，程序退出！");
+        system("pause");
+        return -1;
+    }
+
+
     int Judge = ISdecimals(Lower_amount);
     if (0 == Judge)//是整数
     {
+        if (strlen(Lower_amount) > 12)
+        {
+            printf("请输入千亿以内的金额!");
+            return -1;
+        }
         partition(Lower_amount, Upper_amount);
         strcat_s(Upper_amount, MAX_CAPACITY, "圆");
         strcat_s(Upper_amount, MAX_CAPACITY, "整");
     }
     else//不是整数
     {
-        Lower_amount_lenth = strlen(Lower_amount);
+        if ('0'==Lower_amount[0])
+        {
+            strcat_s(Upper_amount, MAX_CAPACITY, "零");
+        }
+        char *Lower_amount_temp;
+        Lower_amount_temp = (char*)malloc(MAX_CAPACITY);
+        if (!Lower_amount_temp)
+        {
+            printf("内存不足！");
+            return -1;
+        }
+        memset(Lower_amount_temp, 0, MAX_CAPACITY);
+
         char Lower_amount_temp1[MAX_CAPACITY] = { 0 };//用来存整数部分
+
 
         for (int i = 0; i < (Judge - 1); i++)
         {
             Lower_amount_temp1[i] = Lower_amount[i];
         }
 
-        partition(Lower_amount_temp1, Upper_amount);//XXX圆
-        strcat_s(Upper_amount, sizeof(Upper_amount), "圆");
+        if (strlen(Lower_amount_temp1) > 12)
+        {
+            printf("请输入千亿以内的金额!");
+            return -1;
+        }
 
+        partition(Lower_amount_temp1, Upper_amount);//XXX圆
+        strcat_s(Upper_amount, MAX_CAPACITY, "圆");
+
+        round(Lower_amount, 2);
+        Lower_amount_lenth = strlen(Lower_amount);
         char Lower_amount_temp2[MAX_CAPACITY] = { 0 };//用来存小数部分
         int JudgeCopy = Judge;
 
@@ -76,11 +116,11 @@ int main() {
         {
             Lower_amount_temp2[i] = Lower_amount[JudgeCopy++];
         }
-
+        //printf("round回的结果：%s",Lower_amount);
         int temp_integer = Lower_amount_temp2[0] - '0';
 
-        strcat_s(Upper_amount, sizeof(Upper_amount), Upp_m[temp_integer]);
-        strcat_s(Upper_amount, sizeof(Upper_amount), "角");
+        strcat_s(Upper_amount, MAX_CAPACITY, Upp_m[temp_integer]);
+        strcat_s(Upper_amount, MAX_CAPACITY, "角");
 
         if (2 == Lower_amount_lenth - Judge)
 
@@ -200,11 +240,11 @@ void read(char *temp, char *result)//一维数组传参
     case 2:
         strcat_s(result, MAX_PARA, Upp_2[buf_0]);//存十位数的大写
         strcat_s(result, MAX_PARA, Upp_1[2]);//拾
-                                 //char *tmp_1[1] = { 0 };
+                                             //char *tmp_1[1] = { 0 };
         if ('0' != temp[1])
         {
             buf_1 = temp[1] - '0';
-            strcat_s(result, sizeof(result), Upp_2[buf_1]);//存个位数的大写
+            strcat_s(result, MAX_PARA, Upp_2[buf_1]);//存个位数的大写
         }
         break;
     case 3:
@@ -320,4 +360,86 @@ int ISdecimals(char *temp) //判断是否为小数，是则返回小数点所在位置，不是则返回0
         //printf("The character was not found\n");
         return 0;
     }
+}
+void round(char *source, int dig)
+{
+    int pos_dot = 0;
+    int len_source = strlen(source);//字符串长
+    pos_dot = search(source);
+
+    int result_dig = pos_dot + dig;//要保存的位数
+
+    char *temp;
+    temp = (char *)malloc(MAX_CAPACITY);
+
+    if (!temp)
+    {
+        printf("内存不足！");
+    }
+
+    memset(temp, 0, MAX_CAPACITY);
+
+    memcpy(temp, source, result_dig);
+
+    if ((len_source - dig - pos_dot) > 0)
+    {
+        int t1 = source[dig + pos_dot] - '0';
+        if ((t1 + 5) > 9)
+        {
+            int carry_bit = source[dig + pos_dot - 1] - '0';
+            ++carry_bit;
+            temp[dig + pos_dot - 1] = carry_bit + '0';
+        }
+    }
+
+    memcpy(source, temp, MAX_CAPACITY);
+
+}
+
+int search(char* obj) {//计算字符'.'在字符串string中的位置  
+    char  c = '.';
+    char* ptr = strchr(obj, c);
+    if (ptr)
+    {
+        int pos = ptr - obj + 1;
+        //printf("The character [%c] was found at pos: [%d]\n", c, pos);
+        return pos;
+    }
+    else
+    {
+        //printf("The character was not found\n");
+        return -1;
+    }
+}
+
+int ISLegal(char *input)
+{
+    int input_lenth = strlen(input);
+    //if (input_lenth > 12)
+    //{
+    //    printf("请输入千亿以内的金额!");
+    //    return -1;
+    //}
+    int DotAmount = 0;
+    for (int i = 0; i < input_lenth; i++)
+    {
+        if ((('0' <= input[i]) && (input[i]) <= '9') || (input[i] == '.'))
+        {
+            if (input[i] == '.')
+            {
+                ++DotAmount;
+                if (DotAmount > 1)
+                {
+                    printf("输入错误，只能输入一个小数点!\n");
+                    return -1;
+                }
+            }
+        }
+        else
+        {
+            printf("请输入数字！");
+            return -1;
+        }
+    }
+    return 1;
 }
