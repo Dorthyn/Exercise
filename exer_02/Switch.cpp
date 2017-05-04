@@ -1,7 +1,7 @@
 /*
 主函数实现千亿以内人民币的大小写转换，精确到分
 File:Te.cpp
-Author:Dorthyn
+Author:Ma Qiang
 Date:2017-05-04
 Time:10:25
 */
@@ -19,6 +19,7 @@ Time:10:25
 #define MBILL 2
 #define TENTHOUSAND 1
 #define YUAN 0
+#define MAX_PARA 5
 
 
 // 函数声明
@@ -46,14 +47,14 @@ int main() {
     memset(Upper_amount, 0, MAX_CAPACITY);
 
     printf_s("输入要转换的小写金额：\n");
-    scanf("%s", Lower_amount);
+    scanf_s("%s", Lower_amount,15);
     //
     int Judge = ISdecimals(Lower_amount);
     if (0 == Judge)//是整数
     {
         partition(Lower_amount, Upper_amount);
-        strcat(Upper_amount, "圆");
-        strcat(Upper_amount, "整");
+        strcat_s(Upper_amount, MAX_CAPACITY, "圆");
+        strcat_s(Upper_amount, MAX_CAPACITY, "整");
     }
     else//不是整数
     {
@@ -66,7 +67,7 @@ int main() {
         }
 
         partition(Lower_amount_temp1, Upper_amount);//XXX圆
-        strcat(Upper_amount, "圆");
+        strcat_s(Upper_amount, sizeof(Upper_amount), "圆");
 
         char Lower_amount_temp2[MAX_CAPACITY] = { 0 };//用来存小数部分
         int JudgeCopy = Judge;
@@ -78,15 +79,15 @@ int main() {
 
         int temp_integer = Lower_amount_temp2[0] - '0';
 
-        strcat(Upper_amount, Upp_m[temp_integer]);
-        strcat(Upper_amount, "角");
+        strcat_s(Upper_amount, sizeof(Upper_amount), Upp_m[temp_integer]);
+        strcat_s(Upper_amount, sizeof(Upper_amount), "角");
 
         if (2 == Lower_amount_lenth - Judge)
 
         {
             temp_integer = Lower_amount_temp2[1] - '0';
-            strcat(Upper_amount, Upp_m[temp_integer]);
-            strcat(Upper_amount, "分");
+            strcat_s(Upper_amount, MAX_CAPACITY, Upp_m[temp_integer]);
+            strcat_s(Upper_amount, MAX_CAPACITY, "分");
         }
     }
 
@@ -141,7 +142,7 @@ void partition(char *Lower_case, char *Upper_case)
 
     //为read申请的临时区，以便判断返回输出是否加单位
     char *Read_amount;
-    Read_amount = (char*)malloc(MAX_CAPACITY);
+    Read_amount = (char*)malloc(MAX_PARA);
 
     if (!Read_amount)
     {
@@ -150,26 +151,26 @@ void partition(char *Lower_case, char *Upper_case)
 
     for (int j = 0; j <= m; j++)
     {
-        memset(Read_amount, 0, MAX_CAPACITY);
+        memset(Read_amount, 0, MAX_PARA);
         read(tmp[j], Read_amount);
 
         int rel = strcmp(Read_amount, "零");
 
         if (MBILL == mm)
         {
-            strcat(Upper_case, Read_amount);
-            strcat(Upper_case, "亿");
+            strcat_s(Upper_case, MAX_CAPACITY, Read_amount);
+            strcat_s(Upper_case, MAX_CAPACITY, "亿");
         }
         if ((TENTHOUSAND == mm) && (rel != 0))
         {
-            strcat(Upper_case, Read_amount);
-            strcat(Upper_case, "万");
+            strcat_s(Upper_case, MAX_CAPACITY, Read_amount);
+            strcat_s(Upper_case, MAX_CAPACITY, "万");
         }
         if (YUAN == mm)
         {
             if (rel != 0)
             {
-                strcat(Upper_case, Read_amount);
+                strcat_s(Upper_case, MAX_CAPACITY, Read_amount);
             }
             /*           else
             {
@@ -194,95 +195,95 @@ void read(char *temp, char *result)//一维数组传参
     switch (len_temp)
     {
     case 1:
-        strcat(result, Upp_2[buf_0]);//存个位数的大写
+        strcat_s(result, MAX_PARA, Upp_2[buf_0]);//存个位数的大写
         break;
     case 2:
-        strcat(result, Upp_2[buf_0]);//存十位数的大写
-        strcat(result, Upp_1[2]);//拾
+        strcat_s(result, MAX_PARA, Upp_2[buf_0]);//存十位数的大写
+        strcat_s(result, MAX_PARA, Upp_1[2]);//拾
                                  //char *tmp_1[1] = { 0 };
         if ('0' != temp[1])
         {
             buf_1 = temp[1] - '0';
-            strcat(result, Upp_2[buf_1]);//存个位数的大写
+            strcat_s(result, sizeof(result), Upp_2[buf_1]);//存个位数的大写
         }
         break;
     case 3:
-        strcat(result, Upp_2[buf_0]);//存百位数的大写
-        strcat(result, Upp_1[1]);//百
+        strcat_s(result, MAX_PARA, Upp_2[buf_0]);//存百位数的大写
+        strcat_s(result, MAX_PARA, Upp_1[1]);//百
 
         if ('0' != temp[1])//十位数不为0
         {
             buf_1 = temp[1] - '0';
-            strcat(result, Upp_2[buf_1]);//存十位数的大写
-            strcat(result, Upp_1[2]);//拾
+            strcat_s(result, MAX_PARA, Upp_2[buf_1]);//存十位数的大写
+            strcat_s(result, MAX_PARA, Upp_1[2]);//拾
         }
         else//十位数为0
         {
             if ('0' != temp[2])
             {
-                strcat(result, Upp_2[0]);//零
+                strcat_s(result, MAX_PARA, Upp_2[0]);//零
             }
         }
 
         buf_2 = temp[2] - '0';
-        strcat(result, Upp_2[buf_2]);//存个位数的大写
+        strcat_s(result, MAX_PARA, Upp_2[buf_2]);//存个位数的大写
 
         break;
     case 4:
         if ('0' != temp[0])//千位不为0
         {
-            strcat(result, Upp_2[buf_0]);//存百位数的大写
-            strcat(result, Upp_1[0]);//千
+            strcat_s(result, MAX_PARA, Upp_2[buf_0]);//存百位数的大写
+            strcat_s(result, MAX_PARA, Upp_1[0]);//千
         }
         else
         {
-            strcat(result, Upp_2[0]);//加零
+            strcat_s(result, MAX_PARA, Upp_2[0]);//加零
         }
 
         if ('0' != temp[1])//百位数不为0
         {
             buf_1 = temp[1] - '0';
-            strcat(result, Upp_2[buf_1]);//存百位数的大写
-            strcat(result, Upp_1[1]);//百
+            strcat_s(result, MAX_PARA, Upp_2[buf_1]);//存百位数的大写
+            strcat_s(result, MAX_PARA, Upp_1[1]);//百
             if ('0' != temp[2])//十位数不为0
             {
                 buf_2 = temp[2] - '0';
-                strcat(result, Upp_2[buf_2]);//存十位数的大写
-                strcat(result, Upp_1[2]);//拾
+                strcat_s(result, MAX_PARA, Upp_2[buf_2]);//存十位数的大写
+                strcat_s(result, MAX_PARA, Upp_1[2]);//拾
             }
             else//十位数为0
             {
                 if ('0' != temp[3])
                 {
-                    strcat(result, Upp_2[0]);//零
+                    strcat_s(result, MAX_PARA, Upp_2[0]);//零
                 }
             }
             buf_3 = temp[3] - '0';
-            strcat(result, Upp_2[buf_3]);//存个位数的大写
+            strcat_s(result, MAX_PARA, Upp_2[buf_3]);//存个位数的大写
         }
         else//百位数为0
         {
             if (('0' != temp[2]) || ('0' != temp[3])) //十位数或个位数至少有一个不为0
             {
-                strcat(result, Upp_2[0]);//零
+                strcat_s(result, MAX_PARA, Upp_2[0]);//零
                 if ('0' == temp[2])//十位数为0，个位数不为0
                 {
                     buf_1 = temp[3] - '0';
-                    strcat(result, Upp_2[buf_1]);//存个位数的大写
+                    strcat_s(result, MAX_PARA, Upp_2[buf_1]);//存个位数的大写
                 }
                 else if ('0' == temp[3])//个位数为0，十位数不为0
                 {
                     buf_2 = temp[2] - '0';
-                    strcat(result, Upp_2[buf_2]);//存十位数的大写
-                    strcat(result, Upp_1[2]);//拾
+                    strcat_s(result, MAX_PARA, Upp_2[buf_2]);//存十位数的大写
+                    strcat_s(result, MAX_PARA, Upp_1[2]);//拾
                 }
                 else//都不为0
                 {
                     buf_2 = temp[2] - '0';
-                    strcat(result, Upp_2[buf_2]);//存十位数的大写
-                    strcat(result, Upp_1[2]);//拾
+                    strcat_s(result, MAX_PARA, Upp_2[buf_2]);//存十位数的大写
+                    strcat_s(result, MAX_PARA, Upp_1[2]);//拾
                     buf_3 = temp[3] - '0';
-                    strcat(result, Upp_2[buf_3]);//存个位数的大写
+                    strcat_s(result, MAX_PARA, Upp_2[buf_3]);//存个位数的大写
                 }
 
             }
