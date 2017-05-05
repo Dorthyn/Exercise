@@ -1,6 +1,6 @@
 # 20位数以内正整数的大数乘法程序
 
-# V0.1
+## V0.1
 
 本程序实现20位以内的大数乘法
 Date:2017-05-05
@@ -19,3 +19,6 @@ int IntergerToSingle(int src,int *des);//将两位数字打断为单个数字并
 void Long_Number_Multiplication(int *num1, int len1, int *num2, int len2, int *result);//完成两个大数的核心运算过程
 ```
 
+## V0.2
+
+完成边界测试，修复20位数字越界的问题
