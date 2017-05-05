@@ -1,9 +1,10 @@
 /*
-本程序实现20位数以内正整数的大数乘法
+本程序实现20位以内的大数乘法
 Date:2017-05-05
 Time:14:45
 Author:Dorthyn
 */
+
 #include <stdio.h>
 #include <windows.h>
 
@@ -16,23 +17,24 @@ void Long_Number_Multiplication(int *num_1, int len_1, int *num_2, int len_2, in
 int main()
 {
     const int  MAX_LENTH=20;
-    char multiplier_str[MAX_LENTH] = { 0 };//乘数
-    char multiplied_str[MAX_LENTH] = { 0 };//乘数
+    char multiplier_str[MAX_LENTH + 1] = { 0 };//乘数
+    char multiplied_str[MAX_LENTH + 1] = { 0 };//乘数
 
 
     printf("请输入乘数与被乘数：\n");
-    scanf_s("%s", multiplier_str, MAX_LENTH);
+    scanf_s("%s", multiplier_str, MAX_LENTH + 1);
 
     int Legal = ISLegal(multiplier_str);
-    if (0 == Legal)
+    if (0 == Legal||-1==Legal)
     {
         printf("输入不合法！");
         system("pause");
         return -1;
     }
-    scanf_s("%s", multiplied_str, MAX_LENTH);
+
+    scanf_s("%s", multiplied_str, MAX_LENTH + 1);
     Legal = ISLegal(multiplier_str);
-    if (0 == Legal)
+    if (0 == Legal || -1 == Legal)
     {
         printf("输入不合法！");
         system("pause");
@@ -50,8 +52,8 @@ int main()
 
 
 
-    multiplier = (int *)malloc(len_multiplier*sizeof(int));
-    multiplied = (int *)malloc(len_multiplied*sizeof(int));
+    multiplier = (int *)malloc(len_multiplier * sizeof(int));
+    multiplied = (int *)malloc(len_multiplied * sizeof(int));
     product = (int *)malloc((len_multiplied * sizeof(int))+ (len_multiplier * sizeof(int)));
     //product[((len_multiplied * sizeof(int)) + (len_multiplier * sizeof(int)))] = {0};
     memset(product, 0, ((len_multiplied * sizeof(int)) + (len_multiplier * sizeof(int))));
@@ -90,19 +92,36 @@ int main()
     int len_result = 0;
     printf("结果为：\n");
     if (0 == product[(len_product - 1)])
+    {
         len_result = (len_product - 1) - 1;
+    }
+    else
+    {
+        len_result = len_product - 1;
+    }
 
     for (int i = len_result; i >= 0; i--)
     {
         printf("%d",product[i]);
     }
 
+    free(multiplier);
+    free(multiplied);
+    free(product);
 
     system("pause");
     return 0;
 }
 
 
+//************************************
+// Method:    ISLegal
+// FullName:  ISLegal
+// Access:    public 
+// Returns:   int
+// Qualifier: //输入合法性判断
+// Parameter: char * input
+//************************************
 int ISLegal(char *input)//输入合法性判断
 {
     int input_lenth = strlen(input);
@@ -113,7 +132,13 @@ int ISLegal(char *input)//输入合法性判断
     //}
     for (int i = 0; i < input_lenth; i++)
     {
-        if (('0' <= input[i]) && ((input[i]) <= '9'))
+        if (('0'== input[0])&&(input_lenth!=1))
+        {
+            printf("首位数字禁止为0！\n");
+            return -1;
+        }
+
+        else if (('0' <= input[i]) && ((input[i]) <= '9'))
         {
             continue;//输入合法
         }
@@ -126,6 +151,15 @@ int ISLegal(char *input)//输入合法性判断
     return 1;
 }
 
+//************************************
+// Method:    StrToIntConvert
+// FullName:  StrToIntConvert
+// Access:    public 
+// Returns:   int
+// Qualifier: //字符数组转整型数组
+// Parameter: char * str
+// Parameter: int * integer
+//************************************
 int StrToIntConvert(char *str,int *integer)//字符数组转整型数组
 {
     int len_str = strlen(str);
@@ -139,7 +173,16 @@ int StrToIntConvert(char *str,int *integer)//字符数组转整型数组
     return len_str;
 }
 
-int IntergerToSingle(int src, int *des)//将两位数字打断为单个数字并存在数组中,当输入数字为1位数时，输出[0][x]
+//************************************
+// Method:    IntergerToSingle
+// FullName:  IntergerToSingle
+// Access:    public 
+// Returns:   int
+// Qualifier: //将两位数字打断为单个数字并存在数组中,当输入数字为1位数时，输出[0][x]
+// Parameter: int src
+// Parameter: int * des
+//************************************
+int IntergerToSingle(int src, int *des)
 {
     if ((src > 9) && (src < 100))
     {
@@ -155,10 +198,22 @@ int IntergerToSingle(int src, int *des)//将两位数字打断为单个数字并存在数组中,当
     }
 }
 
-void Long_Number_Multiplication(int *num_1,int len_1,int *num_2,int len_2,int *result)//完成两个大数的核心运算过程
-                                                                  //num_1为乘数1，num_2为乘数2，
-                                                                  //len_1为乘数1的长度，len_2为乘数2的长度
-                                                                  //result存放乘积
+//************************************
+// Method:    Long_Number_Multiplication
+// FullName:  Long_Number_Multiplication
+// Access:    public 
+// Returns:   void
+// Qualifier: /*完成两个大数的核心运算过程 */ 
+              /*num_1为乘数1，num_2为乘数2， */
+              /*len_1为乘数1的长度，len_2为乘数2的长度 */ 
+              //result存放乘积
+// Parameter: int * num_1
+// Parameter: int len_1
+// Parameter: int * num_2
+// Parameter: int len_2
+// Parameter: int * result
+//************************************
+void Long_Number_Multiplication(int *num_1,int len_1,int *num_2,int len_2,int *result)
 {
     int k=0;
     int m = 0;
