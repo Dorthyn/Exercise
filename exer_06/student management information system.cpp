@@ -21,16 +21,17 @@ typedef struct student
 
 Linklist *create();//创建带有头节点的链表
 void print_txt(Linklist *Stu);//保存到文件
-Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex,int grade);//更新节点
+Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade);//更新节点
 Linklist *head_select(Linklist *head, unsigned int ID);//查找节点
 Linklist *head_delete(Linklist *head, unsigned int ID);//删除节点
 Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade);
-                                                      //头插法——增加节点
+//头插法——增加节点
 int length(Linklist *head);//返回单链表长度（不含头结点）
 void print_list(Linklist *head);//遍历打印
 Linklist *sort(Linklist *head);//单链表的排序
+Linklist *read();//读取已有数据
 
-int main() 
+int main()
 {
     Linklist *head;
     Linklist *result;//查找结果返回的前指针
@@ -41,6 +42,7 @@ int main()
     int grade = 0;
     char sex[5];
     int IS_opt = 0;
+    head = read();
     do {
         printf("选择要进行的操作：\n");
         printf("1.增加学生信息\n2.删除错误学生信息\n3.更新学生信息\n4.查找学生信息\n5.输出所有学生信息\n");
@@ -156,7 +158,7 @@ void print_txt(Linklist *head)//保存txt
     {
         while (p)
         {
-            fprintf_s(fp, "姓名：%s\t学号：%u\t班级：%u\t性别：%s\n", p->name, p->ID, p->Class_ID, p->sex);
+            fprintf_s(fp, "%s\t%u\t%u\t%s\t%d\n", p->name, p->ID, p->Class_ID, p->sex, p->grade);
             p = p->next;
         }
         printf("学生信息已保存至F盘！\n");
@@ -177,7 +179,7 @@ Linklist *create()//创建链表
 }
 
 Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade)
-                                                                        //头插法——增加节点
+//头插法——增加节点
 {
     Linklist *p;
     Linklist *h;
@@ -192,13 +194,13 @@ Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, ch
 
     p->next = h->next;
     h->next = p;
-    
+
     printf("添加成功！\n");
     return head;
 
 }
 
-Linklist *head_delete(Linklist *head,unsigned int ID)//删除节点
+Linklist *head_delete(Linklist *head, unsigned int ID)//删除节点
 {
     Linklist *tmp;
     Linklist *tmp_del;
@@ -250,15 +252,15 @@ Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, ch
     tmp = head_select(head, ID);
     //if (tmp)//找到要改变的节点的上一个节点
     //{
-        tmp_del = tmp->next;
+    tmp_del = tmp->next;
 
-        tmp_del->Class_ID = Class_ID;
-        strcpy_s(tmp_del->name, NAME_LG, Name);
-        strcpy_s(tmp_del->sex, 5, sex);
-        tmp_del->grade = grade;
+    tmp_del->Class_ID = Class_ID;
+    strcpy_s(tmp_del->name, NAME_LG, Name);
+    strcpy_s(tmp_del->sex, 5, sex);
+    tmp_del->grade = grade;
 
-        printf("更新成功！\n");
-        return head;
+    printf("更新成功！\n");
+    return head;
 }
 
 Linklist *sort(Linklist *head)
@@ -270,7 +272,7 @@ Linklist *sort(Linklist *head)
     len_list = length(head);
     h = head;
 
-    if ((!h) || (!(h->next))||(!(h->next->next)))
+    if ((!h) || (!(h->next)) || (!(h->next->next)))
     {
         return head;
     }
@@ -334,3 +336,47 @@ int length(Linklist *head)//返回单链表长度（不含头结点）
     }
     return len;
 }
+
+Linklist *read()//读取信息并存储至链表
+{
+
+    unsigned int ID;
+    unsigned int Class_ID;
+    char name[NAME_LG];
+    char sex[5];
+    int grade;
+    Linklist *head;
+    FILE *fp;
+
+    errno_t err;
+    err = fopen_s(&fp, "F:\\information.txt", "r");//文件路径可通过字符串传递，放在形参里面
+
+    if (err == 0)
+    {
+        printf("文件打开成功！\n");
+    }
+    else
+    {
+        printf("文件打开失败！\n");
+        system("pause");
+        exit(-1);
+    }
+
+    head = create();
+    while (fscanf(fp, "%s\t%u\t%u\t%s\t%d\n", name, &ID, &Class_ID, sex, &grade) != EOF) 
+    {
+        head_insert(head, ID, Class_ID, name, sex, grade);
+        //printf("%s\t%u\t%u\t%s\n", name, id, cid, sex);
+    }
+
+    if (fclose(fp) != 0)
+    {
+        printf("文件关闭失败！");
+    }
+    else
+    {
+        printf("文件关闭成功！");
+    }
+    return head;
+}
+//"%s\t%u\t%u\t%s\t%d\n", p->name, p->ID, p->Class_ID, p->sex, p->grade
