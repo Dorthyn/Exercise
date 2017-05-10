@@ -15,18 +15,20 @@ typedef struct student
     unsigned int Class_ID;
     char name[NAME_LG];
     char sex[5];
+    int grade;
     struct student *next;
 }Linklist;
 
-
-//void Insert_stu();
 Linklist *create();//创建带有头节点的链表
-void print_stu(Linklist *Stu);//保存到文件
-Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex);//更新节点
+void print_txt(Linklist *Stu);//保存到文件
+Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex,int grade);//更新节点
 Linklist *head_select(Linklist *head, unsigned int ID);//查找节点
 Linklist *head_delete(Linklist *head, unsigned int ID);//删除节点
-Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex);
+Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade);
                                                       //头插法——增加节点
+int length(Linklist *head);//返回单链表长度（不含头结点）
+void print_list(Linklist *head);//遍历打印
+Linklist *sort(Linklist *head);//单链表的排序
 
 int main() 
 {
@@ -36,11 +38,12 @@ int main()
     unsigned int ID = 0;
     unsigned int Class_ID = 0;
     char Name[NAME_LG];
+    int grade = 0;
     char sex[5];
     int IS_opt = 0;
     do {
         printf("选择要进行的操作：\n");
-        printf("1.增加学生信息\n2.删除错误学生信息\n3.更新学生信息\n4.查找学生信息\n");
+        printf("1.增加学生信息\n2.删除错误学生信息\n3.更新学生信息\n4.查找学生信息\n5.输出所有学生信息\n");
         int input = 0;
         scanf_s("%d", &input);
         /*Insert_stu();*/
@@ -55,16 +58,18 @@ int main()
             scanf_s("%s", Name, NAME_LG);
             printf("请输入学生的性别：\n");
             scanf_s("%s", sex, 5);
-            head_insert(head, ID, Class_ID, Name, sex);
+            printf("请输入学生的成绩：\n");
+            scanf_s("%d", &grade);
+
+            head_insert(head, ID, Class_ID, Name, sex, grade);
             break;
         case 2:
             printf("请输入要删除学生学号：\n");
             scanf_s("%u", &ID);
+
             head_delete(head, ID);
             break;
         case 3:
-
-            
             result = head_select(head, ID);
             if (result)
             {
@@ -76,7 +81,10 @@ int main()
                 scanf_s("%s", Name, NAME_LG);
                 printf("请输入学生的性别：\n");
                 scanf_s("%s", sex, 5);
-                head_update(head, ID, Class_ID, Name, sex);
+                printf("请输入学生的成绩：\n");
+                scanf_s("%d", &grade);
+
+                head_update(head, ID, Class_ID, Name, sex, grade);
             }
             else
             {
@@ -92,12 +100,15 @@ int main()
             if (result)
             {
                 result = result->next;
-                printf("所查找学生姓名：%s，学号：%u，班级：%u，性别：%s\n", result->name, result->ID, result->Class_ID, result->sex);
+                printf("所查找学生姓名：%s，学号：%u，班级：%u，性别：%s成绩：%d\n", result->name, result->ID, result->Class_ID, result->sex, result->grade);
             }
             else
             {
                 printf("查找失败！\n");
             }
+            break;
+        case 5:
+            print_list(head);
             break;
         default:
             printf("操作失败！\n");
@@ -107,13 +118,21 @@ int main()
         scanf_s("%d", &IS_opt);
     } while (1 == IS_opt);
 
-    print_stu(head);
+    print_txt(head);
 
     system("pause");
     return 0;
 }
 
-void print_stu(Linklist *head)//保存txt
+//************************************
+// Method:    print_txt
+// FullName:  print_txt
+// Access:    public 
+// Returns:   void
+// Qualifier: //保存txt
+// Parameter: Linklist * head
+//************************************
+void print_txt(Linklist *head)//保存txt
 {//unsigned int ID, unsigned int Clss_ID, char *Name
     Linklist *h = head;
     Linklist *p;
@@ -149,7 +168,7 @@ void print_stu(Linklist *head)//保存txt
     fclose(fp);
 }
 
-Linklist *create()
+Linklist *create()//创建链表
 {
     Linklist *head;
     head = (Linklist*)malloc(sizeof(Linklist));
@@ -157,7 +176,7 @@ Linklist *create()
     return head;
 }
 
-Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex)
+Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade)
                                                                         //头插法——增加节点
 {
     Linklist *p;
@@ -169,6 +188,7 @@ Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, ch
     p->Class_ID = Class_ID;
     strcpy_s(p->name, NAME_LG, Name);
     strcpy_s(p->sex, 5, sex);
+    p->grade = grade;
 
     p->next = h->next;
     h->next = p;
@@ -223,7 +243,7 @@ Linklist *head_select(Linklist *head, unsigned int ID)//查找节点
     }
 }
 
-Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex)//更新节点
+Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade)//更新节点
 {
     Linklist *tmp;
     Linklist *tmp_del;
@@ -235,12 +255,82 @@ Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, ch
         tmp_del->Class_ID = Class_ID;
         strcpy_s(tmp_del->name, NAME_LG, Name);
         strcpy_s(tmp_del->sex, 5, sex);
+        tmp_del->grade = grade;
+
         printf("更新成功！\n");
         return head;
-    //}
-    //else
-    //{
-    //    printf("查无此人！\n");
-    //    return NULL;
-    //}
+}
+
+Linklist *sort(Linklist *head)
+{
+    Linklist *p;
+    Linklist *h;
+    int len_list = 0;
+    int temp = 0;
+    len_list = length(head);
+    h = head;
+
+    if ((!h) || (!(h->next))||(!(h->next->next)))
+    {
+        return head;
+    }
+    //p = head;
+
+    for (int i = 1; i < len_list; i++)
+    {
+        p = h->next;
+        for (int j = 0; j < len_list - i; j++)
+        {
+            if (p->grade > p->next->grade)
+            {
+                temp = p->grade;
+                p->grade = p->next->grade;
+                p->next->grade = temp;
+            }
+            p = p->next;
+        }
+    }
+    return head;
+}
+
+void print_list(Linklist *head)//遍历打印
+{
+    Linklist *h;
+    Linklist *p;
+    h = sort(head);
+
+    int len_list = 0;
+
+    len_list = length(h);
+
+    p = h->next;
+
+    if (p)
+    {
+        while (p)
+        {
+            printf("姓名：%s，学号：%u，班级：%u，性别：%s，成绩：%d\n", p->name, p->ID, p->Class_ID, p->sex, p->grade);
+            p = p->next;
+        }
+        printf("\n");
+    }
+    else
+    {
+        printf("无可显示数据");
+    }
+}
+
+int length(Linklist *head)//返回单链表长度（不含头结点）
+{
+    int len = 0;
+
+    Linklist *p;
+    p = head->next;
+
+    while (p != NULL)
+    {
+        p = p->next;
+        len++;
+    }
+    return len;
 }
