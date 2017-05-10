@@ -25,7 +25,7 @@ Linklist *head_update(Linklist *head, unsigned int ID, unsigned int Class_ID, ch
 Linklist *head_select(Linklist *head, unsigned int ID);//查找节点
 Linklist *head_delete(Linklist *head, unsigned int ID);//删除节点
 Linklist *head_insert(Linklist *head, unsigned int ID, unsigned int Class_ID, char *Name, char *sex, int grade);
-//头插法——增加节点
+														//头插法——增加节点
 int length(Linklist *head);//返回单链表长度（不含头结点）
 void print_list(Linklist *head);//遍历打印
 Linklist *sort(Linklist *head);//单链表的排序
@@ -338,7 +338,6 @@ int length(Linklist *head)//返回单链表长度（不含头结点）
 
 Linklist *read()//读取信息并存储至链表
 {
-
     unsigned int ID;
     unsigned int Class_ID;
     char name[NAME_LG];
@@ -362,6 +361,7 @@ Linklist *read()//读取信息并存储至链表
     }
 
     head = create();
+	
     while (fscanf(fp, "%s\t%u\t%u\t%s\t%d\n", name, &ID, &Class_ID, sex, &grade) != EOF) 
     {
         head_insert(head, ID, Class_ID, name, sex, grade);
@@ -378,4 +378,3 @@ Linklist *read()//读取信息并存储至链表
     }
     return head;
 }
-//"%s\t%u\t%u\t%s\t%d\n", p->name, p->ID, p->Class_ID, p->sex, p->grade
