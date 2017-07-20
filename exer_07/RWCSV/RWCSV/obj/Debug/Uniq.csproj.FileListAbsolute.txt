@@ -1,0 +1,17 @@
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\bin\Debug\RWCSV.exe.config
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\bin\Debug\RWCSV.exe
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\bin\Debug\RWCSV.pdb
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\Uniq.UniqCsv.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.Properties.Resources.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\Uniq.csproj.GenerateResource.Cache
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.exe
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.pdb
+F:\study\Exercise\exer_07\RWCSV\RWCSV\bin\Debug\RWCSV.exe.config
+F:\study\Exercise\exer_07\RWCSV\RWCSV\bin\Debug\RWCSV.exe
+F:\study\Exercise\exer_07\RWCSV\RWCSV\bin\Debug\RWCSV.pdb
+F:\study\Exercise\exer_07\RWCSV\RWCSV\obj\Debug\Uniq.csprojResolveAssemblyReference.cache
+F:\study\Exercise\exer_07\RWCSV\RWCSV\obj\Debug\Uniq.UniqCsv.resources
+F:\study\Exercise\exer_07\RWCSV\RWCSV\obj\Debug\RWCSV.Properties.Resources.resources
+F:\study\Exercise\exer_07\RWCSV\RWCSV\obj\Debug\Uniq.csproj.GenerateResource.Cache
+F:\study\Exercise\exer_07\RWCSV\RWCSV\obj\Debug\RWCSV.exe
+F:\study\Exercise\exer_07\RWCSV\RWCSV\obj\Debug\RWCSV.pdb

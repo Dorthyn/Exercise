@@ -1,0 +1,8 @@
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\bin\Debug\RWCSV.exe.config
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\bin\Debug\RWCSV.exe
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\bin\Debug\RWCSV.pdb
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.Form1.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.Properties.Resources.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.csproj.GenerateResource.Cache
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.exe
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\RWCSV\RWCSV\obj\Debug\RWCSV.pdb
