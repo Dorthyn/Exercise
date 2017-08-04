@@ -1,0 +1,10 @@
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\bin\Debug\WaveControl.exe.config
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\bin\Debug\WaveControl.exe
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\bin\Debug\WaveControl.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.csprojResolveAssemblyReference.cache
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.Properties.Resources.resources
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.UserWaveControl.resources
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.csproj.GenerateResource.Cache
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.exe
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\WaveControl\WaveControl\obj\Debug\WaveControl.Form1.resources
