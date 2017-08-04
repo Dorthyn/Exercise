@@ -1,0 +1,25 @@
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\bin\Debug\Simonsimon.exe.config
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\bin\Debug\Simonsimon.exe
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\bin\Debug\Simonsimon.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.csprojResolveAssemblyReference.cache
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.Properties.Resources.resources
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.csproj.GenerateResource.Cache
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.exe
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.Form1.resources
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\bin\Debug\Simonsimon.exe.config
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\bin\Debug\Simonsimon.exe
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\bin\Debug\Simonsimon.pdb
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.csprojResolveAssemblyReference.cache
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.Form1.resources
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.Properties.Resources.resources
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.UserControl1.resources
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.csproj.GenerateResource.Cache
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.exe
+C:\Users\马强\Desktop\Simonsimon\Simonsimon\obj\Debug\Simonsimon.pdb
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.ShiningLightsControl.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.countdown.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.HelpForm.resources
+C:\Users\M0015\Documents\Visual Studio 2017\Projects\Simonsimon\Simonsimon\obj\Debug\Simonsimon.Register_Login_MainForm.resources
+C:\Users\M0015\documents\visual studio 2017\Projects\simonsimon\Simonsimon\obj\Debug\Simonsimon.CountDownSpan.resources
+C:\Users\M0015\documents\visual studio 2017\Projects\simonsimon\Simonsimon\obj\Debug\Simonsimon.RankForm.resources

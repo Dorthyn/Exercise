@@ -1,0 +1,202 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Threading;
+using System.Windows.Forms;
+using simon.Properties;
+
+namespace simon
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private int onList = 0;
+        List<int> pattern = new List<int>();
+        Random rand = new Random();
+        private bool playingBack = true;
+
+        //private void Red_Click(object sender, EventArgs e)
+        //{
+        //    TestCorrect(0);
+        //}
+
+        //private void Blue_Click(object sender, EventArgs e)
+        //{
+        //    TestCorrect(1);
+        //}
+
+        //private void Yellow_Click(object sender, EventArgs e)
+        //{
+        //    TestCorrect(2);
+        //}
+
+        //private void Green_Click(object sender, EventArgs e)
+        //{
+        //    TestCorrect(3);
+        //}
+
+        private void TestCorrect(int color)
+        {
+            if(playingBack)
+                return;
+            if (pattern[onList] == color)
+            {
+                onList++;
+            }
+            else
+            {
+                MessageBox.Show("You Fail!The score is" + pattern.Count.ToString());
+                onList = 0;
+                pattern = new List<int>();
+                new Thread(playback).Start();
+            }
+            if (onList >= pattern.Count)
+            {
+                pattern.Add(rand.Next(0,4));
+                onList = 0;
+                new Thread(playback).Start();
+            }
+            ScoreLabel.Text = "Scores:" + pattern.Count;
+            PatternLabel.Text = "Item within pattern" + onList;
+
+        }
+
+        //private void playback()
+        //{
+        //    playingBack = true;
+        //    foreach (int color in pattern)
+        //    {
+        //        switch (color)
+        //        {
+        //            case 0:
+        //                Red.BackColor = Color.Red;
+        //                Thread.Sleep(200);
+        //                Red.BackColor = Color.Transparent;
+        //                break;
+        //            case 1:
+        //                Blue.BackColor = Color.Blue;
+        //                Thread.Sleep(200);
+        //                Blue.BackColor = Color.Transparent;
+        //                break;
+        //            case 2:
+        //                Yellow.BackColor = Color.Yellow;
+        //                Thread.Sleep(200);
+        //                Yellow.BackColor = Color.Transparent;
+        //                break;
+        //            case 3:
+        //                Green.BackColor = Color.Green;
+        //                Thread.Sleep(200);
+        //                Green.BackColor = Color.Transparent;
+        //                break;
+        //        }
+        //        Thread.Sleep(200);
+        //    }
+
+        //    playingBack = false;
+        //}
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pattern.Add(rand.Next(0,4));
+            new Thread(playback).Start();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TestCorrect(0);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            TestCorrect(1);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            TestCorrect(2);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            TestCorrect(3);
+        }
+
+        private void playback()
+        {
+            playingBack = true;
+            foreach (int color in pattern)
+            {
+                switch (color)
+                {
+                    case 0:
+                        pictureBox1.Image = Resources.redbright;
+                        Thread.Sleep(200);
+                        pictureBox1.Image = Resources.red;
+                        break;
+                    case 1:
+                        pictureBox2.Image = Resources.bluebright;
+                        Thread.Sleep(200);
+                        pictureBox2.Image = Resources.blue;
+                        break;
+                    case 2:
+                        pictureBox3.Image = Resources.darkbluebright;
+                        Thread.Sleep(200);
+                        pictureBox3.Image = Resources.darkblue;
+                        break;
+                    case 3:
+                        pictureBox4.Image = Resources.greenbright;
+                        Thread.Sleep(200);
+                        pictureBox4.Image = Resources.green;
+                        break;
+                }
+                Thread.Sleep(200);
+            }
+
+            playingBack = false;
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox1.Image = Resources.redbright;
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox1.Image = Resources.red;
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox2.Image = Resources.bluebright;
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox2.Image = Resources.blue;
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox3.Image = Resources.darkbluebright;
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox3.Image = Resources.darkblue;
+        }
+
+        private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBox4.Image = Resources.greenbright;
+        }
+
+        private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
+        {
+            pictureBox4.Image = Resources.green;
+        }
+    }
+}
