@@ -1,0 +1,9 @@
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\bin\Debug\xmlxml.exe.config
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\bin\Debug\xmlxml.exe
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\bin\Debug\xmlxml.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\obj\Debug\xmlxml.Form1.resources
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\obj\Debug\xmlxml.Properties.Resources.resources
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\obj\Debug\xmlxml.csproj.GenerateResource.Cache
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\obj\Debug\xmlxml.exe
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\obj\Debug\xmlxml.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\xmlxml\xmlxml\obj\Debug\xmlxml.csprojResolveAssemblyReference.cache
