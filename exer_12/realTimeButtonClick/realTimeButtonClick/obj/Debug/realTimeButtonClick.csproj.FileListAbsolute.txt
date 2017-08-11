@@ -1,0 +1,8 @@
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\bin\Debug\realTimeButtonClick.exe.config
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\bin\Debug\realTimeButtonClick.exe
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\bin\Debug\realTimeButtonClick.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\obj\Debug\realTimeButtonClick.Form1.resources
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\obj\Debug\realTimeButtonClick.Properties.Resources.resources
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\obj\Debug\realTimeButtonClick.csproj.GenerateResource.Cache
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\obj\Debug\realTimeButtonClick.exe
+c:\users\m0015\documents\visual studio 2017\Projects\realTimeButtonClick\realTimeButtonClick\obj\Debug\realTimeButtonClick.pdb
