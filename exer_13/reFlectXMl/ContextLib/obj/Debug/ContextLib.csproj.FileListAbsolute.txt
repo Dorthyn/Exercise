@@ -1,0 +1,7 @@
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\bin\Debug\ContextLib.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\bin\Debug\ContextLib.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\bin\Debug\InterfaceMenu.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\bin\Debug\InterfaceMenu.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\obj\Debug\ContextLib.csprojResolveAssemblyReference.cache
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\obj\Debug\ContextLib.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\ContextLib\obj\Debug\ContextLib.pdb

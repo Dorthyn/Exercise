@@ -1,0 +1,4 @@
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\InterfaceMenu\bin\Debug\InterfaceMenu.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\InterfaceMenu\bin\Debug\InterfaceMenu.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\InterfaceMenu\obj\Debug\InterfaceMenu.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\InterfaceMenu\obj\Debug\InterfaceMenu.pdb

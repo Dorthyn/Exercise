@@ -1,0 +1,15 @@
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\reFlectXMl.exe.config
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\reFlectXMl.exe
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\reFlectXMl.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\obj\Debug\reFlectXMl.Form1.resources
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\obj\Debug\reFlectXMl.Properties.Resources.resources
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\obj\Debug\reFlectXMl.csproj.GenerateResource.Cache
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\obj\Debug\reFlectXMl.exe
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\obj\Debug\reFlectXMl.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\InterfaceMenu.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\InterfaceMenu.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\obj\Debug\reFlectXMl.csprojResolveAssemblyReference.cache
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\MenuLib.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\MenuLib.pdb
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\ContextLib.dll
+c:\users\m0015\documents\visual studio 2017\Projects\reFlectXMl\reFlectXMl\bin\Debug\ContextLib.pdb
