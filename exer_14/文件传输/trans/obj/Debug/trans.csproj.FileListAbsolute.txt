@@ -1,0 +1,8 @@
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\bin\Debug\trans.exe.config
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\bin\Debug\trans.exe
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\bin\Debug\trans.pdb
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\obj\Debug\trans.ClientForm.resources
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\obj\Debug\trans.Properties.Resources.resources
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\obj\Debug\trans.csproj.GenerateResource.Cache
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\obj\Debug\trans.exe
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\trans\obj\Debug\trans.pdb

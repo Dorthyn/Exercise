@@ -1,0 +1,8 @@
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\bin\Debug\Server.exe.config
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\bin\Debug\Server.exe
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\bin\Debug\Server.pdb
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.ServerForm.resources
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.exe
+C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.pdb
