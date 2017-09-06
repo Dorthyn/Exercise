@@ -1,0 +1,5 @@
+C:\Users\M0015\Desktop\Get all handles of a process\bin\x86\Debug\ProcessImageNameList.exe
+C:\Users\M0015\Desktop\Get all handles of a process\bin\x86\Debug\ProcessImageNameList.pdb
+C:\Users\M0015\Desktop\Get all handles of a process\obj\x86\Debug\ProcessNtquery.csproj.CoreCompileInputs.cache
+C:\Users\M0015\Desktop\Get all handles of a process\obj\x86\Debug\ProcessImageNameList.exe
+C:\Users\M0015\Desktop\Get all handles of a process\obj\x86\Debug\ProcessImageNameList.pdb
