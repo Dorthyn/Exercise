@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<title>百度一下，你就知道</title>
+<html>
+<head>
+        <style>
+.s_btn {
+	width: 95px;
+	height: 32px;
+	padding-top: 2px\9;
+	font-size: 14px;
+	background-color: #ddd;
+	background-position: 0 -48px;
+	cursor: pointer
+}
+.s_btn {
+	width: 100px;
+	height: 36px;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	background: #3385ff;
+	border-bottom: 1px solid #2d78f4;
+	outline: medium;
+*border-bottom:0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0
+}
+#head {
+	padding-bottom: 100px;
+	text-align: center;
+*z-index:1
+}
+#head .head_wrapper {
+	height: 100%
+}
+.bg {
+	background-image: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_5859e57.png);
+	background-repeat: no-repeat;
+	_background-image: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_d5b04cc.gif)
+}
+.soutu-btn {
+	z-index: 1;
+	position: absolute;
+	right: 11px;
+	top: 50%;
+	margin-top: -8px;
+	height: 16px;
+	width: 18px;
+	background: #fff url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) no-repeat;
+	background-image: -webkit-image-set(url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) 1x, url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_x2_fb6c085.png) 2x);
+	background-image: -moz-image-set(url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) 1x, url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_x2_fb6c085.png) 2x);
+	background-image: -o-image-set(url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) 1x, url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_x2_fb6c085.png) 2x);
+	background-image: -ms-image-set(url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) 1x, url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_x2_fb6c085.png) 2x);
+	cursor: pointer
+}
+.s_ipt_wr {
+	border: 1px solid #b6b6b6;
+	border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
+	background: #fff;
+	display: inline-block;
+	vertical-align: top;
+	width: 539px;
+	margin-right: 0;
+	border-right-width: 0;
+	border-color: #b8b8b8 transparent #ccc #b8b8b8;
+	overflow: hidden
+}
+.s_ipt_wr {
+	height: 34px
+}
+.s_ipt {
+	width: 526px;
+	height: 22px;
+	font: 16px/18px arial;
+	line-height: 22px;
+	margin: 6px 0 0 7px;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	-webkit-appearance: none
+}
+.quickdelete-wrap {
+	position: relative
+}
+.quickdelete-wrap input {
+	width: 500px
+}
+#u1 a.mnav, #u1 a.mnav:visited {
+	float: left;
+	color: #333;
+	font-weight: 700;
+	line-height: 24px;
+	margin-left: 20px;
+	font-size: 13px;
+	text-decoration: underline
+}
+#u1 a.lb, #u1 a.lb:visited, #u1 a.username {
+	display: inline-block;
+	float: left;
+	color: #333;
+	font-size: 13px;
+	line-height: 24px;
+	margin-left: 20px;
+	text-decoration: underline
+}
+#u1 a.pf, #u1 a.pf:visited {
+	display: inline-block;
+	float: left;
+	color: #333;
+	line-height: 24px;
+	font-size: 13px;
+	margin-left: 20px;
+	overflow: hidden;
+	text-decoration: underline
+}
+#u1 a.bri, #u1 a.bri:visited {
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+	width: 60px;
+	height: 23px;
+	float: left;
+	color: #fff;
+	background: #38f;
+	line-height: 24px;
+	font-size: 13px;
+	text-align: center;
+	overflow: hidden;
+	border-bottom: 1px solid #38f;
+	margin-left: 19px;
+	margin-right: 2px
+}
+#u1 {
+	z-index: 2;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 19px 0 5px;
+	padding: 0 96px 0 0
+}
+#wrapper .bdnuarrow.bdbriarrow {
+	right: 104px;
+	display: none!important
+}
+#wrapper .bdnuarrow {
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	display: block;
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	margin-left: -5px
+}
+.s_btn_wr {
+	width: auto;
+	height: auto;
+	border-bottom: 1px solid transparent;
+*border-bottom:0
+}
+#kw {
+	position: relative
+}
+#m {
+	width: 720px;
+	margin: 0 auto
+}
+#m {
+	position: relative
+}
+.c-icon-jgwablogo {
+	background-position: -623px -96px;
+	position: relative;
+	top: 3px
+}
+#cp .c-icon-icrlogo, .c-icon-jgwablogo {
+	width: 14px;
+	height: 17px;
+	display: inline-block;
+	overflow: hidden;
+	background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_5859e57.png) no-repeat;
+	_background-image: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_d5b04cc.gif)
+}
+.bdpfmenu, .usermenu {
+	border: 1px solid #d1d1d1;
+	position: absolute;
+	width: 105px;
+	top: 36px;
+	z-index: 302;
+	box-shadow: 1px 1px 5px #d1d1d1;
+	-webkit-box-shadow: 1px 1px 5px #d1d1d1;
+	-moz-box-shadow: 1px 1px 5px #d1d1d1;
+	-o-box-shadow: 1px 1px 5px #d1d1d1
+}
+.bdpfmenu {
+	width: 70px
+}
+.bdpfmenu {
+	font-size: 12px;
+	background-color: #fff
+}
+.bdpfmenu {
+	background-color: #fff;
+	border: 1px solid #d1d1d1;
+	position: absolute;
+	right: 160px;
+	width: 68px;
+	top: 36px;
+	margin-top: -1px;
+	_margin-top: -3px;
+	z-index: 2;
+	box-shadow: 1px 1px 5px #d1d1d1;
+	-webkit-box-shadow: 1px 1px 5px #d1d1d1;
+	-moz-box-shadow: 1px 1px 5px #d1d1d1;
+	-o-box-shadow: 1px 1px 5px #d1d1d1
+}
+#ftConw {
+	text-align: center;
+	margin: 500px auto auto auto;
+	margin-left: 0
+}
+#ftConw, #ftConw a {
+	color: #999
+}
+img {
+	border: 0
+}
+.kernel {
+	text-align: center;
+	margin-left: 0;
+}
+.boxs {
+	margin: 0 auto;
+	height: 70px;
+	width: 550px;
+	background: #4089B2;
+	padding-top: 32px;
+	overflow: hidden
+}
+.box-left {
+	float: left;
+	width: 250px;
+	text-align: right
+}
+.box-right {
+	float: right;
+	width: 250px;
+	text-align: left
+}
+.blk {
+	display: none
+}
+</style>
+        <style type="text/css"> 
+
+
+body {text-align:center;font-family:microsoft yahei, Arial, Helvetica, sans-serif;}
+.content {padding:30px;}
+h1 {font-size:26px;margin:30px 0;}
+.tabs {
+  width: 600px;
+  float: none;
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type="radio"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  background: #e0e0e0;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0;
+  background: #d2d2d2;
+}
+.tabs [id^="tab"]:checked + label {
+  top: 0;
+  padding-top: 17px;
+  background: #d2d2d2;
+  text-align:center;
+}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  display: block;
+}
+</style>
+        <style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+        <script>
+function SwapDivsWithClick(div1,div2)
+{
+   d1 = document.getElementById(div1);
+   d2 = document.getElementById(div2);
+   if( d2.style.display == "none" )
+   {
+      d1.style.display = "none";
+      d2.style.display = "block";
+   }
+   else
+   {
+      d1.style.display = "block";
+      d2.style.display = "none";
+   }
+}
+ </script>
+</head>
+<body background="C:/Users/M0015/Desktop/background.jpg">
+
+<div class="kernel">
+    <div id="u1">
+        <a href="http://news.baidu.com" name="tj_trnews" class="mnav">新闻</a>
+        <a href="http://www.hao123.com" name="tj_trhao123" class="mnav">hao123</a>
+        <a href="http://map.baidu.com" name="tj_trmap" class="mnav">地图</a>
+        <a href="http://v.baidu.com" name="tj_trvideo" class="mnav">视频</a>
+        <a href="http://tieba.baidu.com" name="tj_trtieba" class="mnav">贴吧</a>
+        <a href="http://xueshu.baidu.com" name="tj_trxueshu" class="mnav">学术</a>
+        <a href="https://passport.baidu.com/v2/?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2F" name="tj_login" class="lb" onclick="return false;">登录</a>
+        <div class="dropdown">
+            <a href="http://www.baidu.com/gaoji/preferences.html" name="tj_settingicon" class="pf" "dropbtn">设置</a>
+              <div class="dropdown-content">
+    <a href="http://www.baidu.com">搜索设置</a>
+    <a href="http://www.baidu.com">高级搜索</a>
+    <a href="http://www.baidu.com">关闭预测</a>
+    <a href="http://www.baidu.com">搜索历史</a>
+  </div>
+        </div>
+        <a href="http://www.baidu.com/more/" name="tj_briicon" class="bri" style="display: block;">更多产品</a>
+        
+        <div class="bdpfmenu" style="left: 710px; top: 48px; display: none;">
+            <div class="bdnuarrow"><em></em><i></i></div>
+            <a class="setpref" href="javascript:;">搜索设置</a>
+            <a href="//www.baidu.com/gaoji/advanced.html" target="_blank">高级搜索</a>
+            <a href="javascript:;">关闭预测</a><a href="javascript:;">搜索历史</a>
+        </div>
+    </div>
+
+    <div style="text-algin:center" id="lg">
+        <img hidefocus="true" src="C:/Users/M0015/Desktop/bd_logo1.png" width="270" height="129">
+    </div>
+
+    <span class="bg s_ipt_wr quickdelete-wrap">
+
+        <span class="soutu-btn" style="display: block;"></span>
+        <input id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off"><a href="javascript:;" id="quickdelete" title="清空" class="quickdelete" style="top: 0px; right: 0px; display: none;"></a>
+    </span>
+    <span class="bg s_btn_wr">
+        <input type="submit" id="su" value="百度一下" class="bg s_btn">
+    </span>
+
+    <div class="content" style="margin:0 auto;" >
+	<h1>每日更新</h1>
+<ul class="tabs" style="margin:0 auto;">
+    <li>
+        <input type="radio" name="tabs" id="tab1" checked="">
+        <label for="tab1">选项卡 1</label>
+        <div id="tab-content1" class="tab-content">
+            <div>
+                <div class="box-left" style='height:200px';>
+                    <p>实时新闻</p>
+                    <div id="swapper-first" style='display:block';>
+                        
+                          <p>第一条</p>
+                          <p>第二条</p>
+                          <p>第三条</p>
+                        
+                    </div>
+                    
+                    <div id="swapper-other" style='display:none';>
+                        
+                          <p>换了</p>
+                          <p>真的换了</p>
+                          <p>你还不信</p>
+                        
+                    </div>
+
+                </div> 
+                <div class="box-right">
+                    <p><a href="javascript:SwapDivsWithClick('swapper-first','swapper-other')">换一换</a></p>
+            </div>
+        </div>
+    </li>
+ 
+    <li>
+        <input type="radio" name="tabs" id="tab2">
+        <label for="tab2">选项卡 2</label>
+        <div id="tab-content2" class="tab-content">
+          <p>这里可以加入一些选项2</p>
+        </div>
+    </li>
+    
+        <li>
+        <input type="radio" name="tabs" id="tab3">
+        <label for="tab3">选项卡 3</label>
+        <div id="tab-content3" class="tab-content">
+          <p>这里可以加入一些选项3</p>
+        </div>
+    </li>
+    
+    <li>
+        <input type="radio" name="tabs" id="tab4">
+        <label for="tab4">选项卡 4</label>
+        <div id="tab-content4" class="tab-content">
+          <p>这里可以加入一些选项4</p>
+        </div>
+    </li>
+    
+    <li>
+        <input type="radio" name="tabs" id="tab5">
+        <label for="tab5">选项卡 5</label>
+        <div id="tab-content5" class="tab-content">
+          <p>这里可以加入一些选项5</p>
+        </div>
+    </li>
+    
+</ul>
+</div>
+</div>
+
+<div id="ftConw">
+    <p id="lh">
+        <a id="setf" href="//www.baidu.com/cache/sethelp/help.html" onmousedown="return ns_c({'fm':'behs','tab':'favorites','pos':0})" target="_blank">把百度设为主页</a>
+        <a onmousedown="return ns_c({'fm':'behs','tab':'tj_about'})" href="http://home.baidu.com">关于百度</a><a onmousedown="return ns_c({'fm':'behs','tab':'tj_about_en'})" href="http://ir.baidu.com">About&nbsp;&nbsp;Baidu</a>
+        <a onmousedown="return ns_c({'fm':'behs','tab':'tj_tuiguang'})" href="http://e.baidu.com/?refer=888">百度推广</a>
+    </p>
+    <p id="cp">&copy;2017&nbsp;Baidu&nbsp;
+        <a href="http://www.baidu.com/duty/" onmousedown="return ns_c({'fm':'behs','tab':'tj_duty'})">使用百度前必读</a>&nbsp;
+        <a href="http://jianyi.baidu.com/" class="cp-feedback" onmousedown="return ns_c({'fm':'behs','tab':'tj_homefb'})">意见反馈</a>&nbsp;京ICP证030173号&nbsp;
+        <i class="c-icon-icrlogo"></i>&nbsp;
+        <a id="jgwab" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">京公网安备11000002000001号</a>&nbsp;
+        <i class="c-icon-jgwablogo"></i>
+    </p>
+</div>
+</div>
+</body>
+</html>
