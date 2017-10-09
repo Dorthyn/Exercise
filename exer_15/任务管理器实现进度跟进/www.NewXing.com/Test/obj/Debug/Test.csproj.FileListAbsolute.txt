@@ -1,0 +1,9 @@
+C:\Users\M0015\Desktop\www.NewXing.com\bin\Test.exe
+C:\Users\M0015\Desktop\www.NewXing.com\bin\Test.pdb
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.frmProcess.resources
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.LineChart.resources
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.exe
+C:\Users\M0015\Desktop\www.NewXing.com\Test\obj\Debug\Test.pdb

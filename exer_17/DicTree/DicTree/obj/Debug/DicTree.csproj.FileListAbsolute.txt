@@ -1,0 +1,10 @@
+C:\Users\M0015\source\repos\DicTree\DicTree\bin\Debug\DicTree.exe.config
+C:\Users\M0015\source\repos\DicTree\DicTree\bin\Debug\DicTree.exe
+C:\Users\M0015\source\repos\DicTree\DicTree\bin\Debug\DicTree.pdb
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.Form1.resources
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.Properties.Resources.resources
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.csproj.GenerateResource.Cache
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.csproj.CoreCompileInputs.cache
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.exe
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.pdb
+C:\Users\M0015\source\repos\DicTree\DicTree\obj\Debug\DicTree.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Users\M0015\Desktop\www.NewXing.com\bin\Lemony.SystemInfo.dll
+C:\Users\M0015\Desktop\www.NewXing.com\bin\Lemony.SystemInfo.pdb
+C:\Users\M0015\Desktop\www.NewXing.com\SystemInfo\obj\Debug\SystemInfo.csprojResolveAssemblyReference.cache
+C:\Users\M0015\Desktop\www.NewXing.com\SystemInfo\obj\Debug\Lemony.SystemInfo.dll
+C:\Users\M0015\Desktop\www.NewXing.com\SystemInfo\obj\Debug\Lemony.SystemInfo.pdb

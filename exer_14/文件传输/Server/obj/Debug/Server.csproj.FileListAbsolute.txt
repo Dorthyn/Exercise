@@ -6,3 +6,13 @@ C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Deb
 C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.csproj.GenerateResource.Cache
 C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.exe
 C:\Users\M0015\documents\visual studio 2017\Projects\文件传输\Server\obj\Debug\Server.pdb
+F:\study\Exercise\exer_14\文件传输\Server\bin\Debug\Server.exe.config
+F:\study\Exercise\exer_14\文件传输\Server\bin\Debug\Server.exe
+F:\study\Exercise\exer_14\文件传输\Server\bin\Debug\Server.pdb
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.ServerForm.resources
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.Properties.Resources.resources
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.exe
+F:\study\Exercise\exer_14\文件传输\Server\obj\Debug\Server.pdb
