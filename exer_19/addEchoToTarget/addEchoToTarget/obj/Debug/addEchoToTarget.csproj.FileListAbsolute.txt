@@ -1,0 +1,7 @@
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\bin\Debug\addEchoToTarget.exe.config
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\bin\Debug\addEchoToTarget.exe
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\bin\Debug\addEchoToTarget.pdb
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\obj\Debug\addEchoToTarget.csprojResolveAssemblyReference.cache
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\obj\Debug\addEchoToTarget.csproj.CoreCompileInputs.cache
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\obj\Debug\addEchoToTarget.exe
+C:\Users\M0015\source\repos\addEchoToTarget\addEchoToTarget\obj\Debug\addEchoToTarget.pdb
