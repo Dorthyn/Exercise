@@ -7,3 +7,12 @@ C:\Users\M0015\source\repos\DicTree\DicTree\obj\x64\Debug\DicTree.csproj.Generat
 C:\Users\M0015\source\repos\DicTree\DicTree\obj\x64\Debug\DicTree.csproj.CoreCompileInputs.cache
 C:\Users\M0015\source\repos\DicTree\DicTree\obj\x64\Debug\DicTree.exe
 C:\Users\M0015\source\repos\DicTree\DicTree\obj\x64\Debug\DicTree.pdb
+F:\study\Exercise\exer_17\DicTree\DicTree\bin\x64\Debug\DicTree.exe.config
+F:\study\Exercise\exer_17\DicTree\DicTree\bin\x64\Debug\DicTree.exe
+F:\study\Exercise\exer_17\DicTree\DicTree\bin\x64\Debug\DicTree.pdb
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x64\Debug\DicTree.Form1.resources
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x64\Debug\DicTree.Properties.Resources.resources
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x64\Debug\DicTree.csproj.GenerateResource.Cache
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x64\Debug\DicTree.csproj.CoreCompileInputs.cache
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x64\Debug\DicTree.exe
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x64\Debug\DicTree.pdb

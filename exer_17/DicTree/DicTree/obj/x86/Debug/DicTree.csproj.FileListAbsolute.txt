@@ -1,0 +1,9 @@
+F:\study\Exercise\exer_17\DicTree\DicTree\bin\x86\Debug\DicTree.exe.config
+F:\study\Exercise\exer_17\DicTree\DicTree\bin\x86\Debug\DicTree.exe
+F:\study\Exercise\exer_17\DicTree\DicTree\bin\x86\Debug\DicTree.pdb
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x86\Debug\DicTree.Form1.resources
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x86\Debug\DicTree.Properties.Resources.resources
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x86\Debug\DicTree.csproj.GenerateResource.Cache
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x86\Debug\DicTree.csproj.CoreCompileInputs.cache
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x86\Debug\DicTree.exe
+F:\study\Exercise\exer_17\DicTree\DicTree\obj\x86\Debug\DicTree.pdb
